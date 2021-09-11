@@ -16,7 +16,7 @@
           v-for="product in this.productList"
           v-bind:key="product.id"
         >
-          <img src="{{product.image}}" alt="" />
+          <img :src="'storage/image'+product.image" alt="" />
           <h3>{{ product.name }}</h3>
         </div>
       </div>

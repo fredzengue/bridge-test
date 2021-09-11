@@ -61,7 +61,7 @@ class ProductController extends Controller
     }
     public function storeImage(Request $request){
         $file_name = time().'_'.$request->file->getClientOriginalName();
-        $file_path = Storage::disk('local')->put($file_name, $request);
+        $file_path = $request->file('file')->storeAs('images', $file_name, 'public');
         return $file_path;
     }
     /**
